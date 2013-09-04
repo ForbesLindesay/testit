@@ -22,8 +22,8 @@ function it(description, fn, timeout) {
     process.exit(1)
   }
   pending = pending.then(function () {
-    process.on('uncaughtException', uncaught)
     start = new Date()
+    process.on('uncaughtException', uncaught)
     if (timeout != Infinity) {
       return dotimeout(fn(), timeout || '20 seconds')
     } else {
@@ -32,7 +32,7 @@ function it(description, fn, timeout) {
   })
   .then(function () {
     process.removeListener('uncaughtException', uncaught)
-    console.info(color.green(' v ') + description)
+    console.info(color.green(' v ') + description + color.cyan(' (' + ms(new Date() - start) + ')'))
   }, function (err) {
     process.removeListener('uncaughtException', uncaught)
     displayError(err)
@@ -42,7 +42,7 @@ function it(description, fn, timeout) {
   })
   pending.done()
   function displayError(err) {
-    console.error(color.red(' x ') + description)
+    console.error(color.red(' x ') + description + color.cyan(' (' + ms(new Date() - start) + ')'))
     if (err) {
       console.error()
       console.error((err.stack || err.message || err).toString().replace(/^/gm, '   '))
