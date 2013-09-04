@@ -1,0 +1,20 @@
+{
+  "name": "testit",
+  "version": "0.0.0",
+  "description": "Because the world needs a simpler testing framework",
+  "keywords": [],
+  "dependencies": {
+    "ms": "~0.6.1",
+    "bash-color": "0.0.3",
+    "promise": "~3.2.0"
+  },
+  "scripts": {
+    "test": "node test/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ForbesLindesay/testit.git"
+  },
+  "author": "ForbesLindesay",
+  "license": "MIT"
+}
