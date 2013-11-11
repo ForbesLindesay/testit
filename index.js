@@ -6,6 +6,7 @@ var color = require('bash-color')
 var ms = require('ms')
 
 module.exports = it
+module.exports.run = run;
 
 var pending = Promise.from(null)
 function it(description, fn, timeout) {
@@ -49,6 +50,12 @@ function it(description, fn, timeout) {
     }
     console.error()
   }
+}
+
+function run(fn) {
+  pending = pending.then(fn);
+  pending.done();
+  return pending;
 }
 
 function catchall(val) {

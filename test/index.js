@@ -27,6 +27,13 @@ it('fails some async tests', function (done) {
     done(new Error('oh dear'))
   }, 100)
 })
+
+it.run(function () {
+  console.log('You can run things inline between tests\n')
+})
+it.run(function () {
+  console.log('So half way through tests, such WOW!\n')
+})
 it('times out some tests', function (done) {
   setTimeout(function () {
     done()
