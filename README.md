@@ -2,9 +2,9 @@
 
 Because the world needs a simpler testing framework
 
-[![Build Status](https://travis-ci.org/ForbesLindesay/testit.png?branch=master)](https://travis-ci.org/ForbesLindesay/testit)
-[![Dependency Status](https://gemnasium.com/ForbesLindesay/testit.png)](https://gemnasium.com/ForbesLindesay/testit)
-[![NPM version](https://badge.fury.io/js/testit.png)](http://badge.fury.io/js/testit)
+[![Build Status](https://img.shields.io/travis/ForbesLindesay/testit/master.svg)](https://travis-ci.org/ForbesLindesay/testit)
+[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/testit.svg)](https://gemnasium.com/ForbesLindesay/testit)
+[![NPM version](https://img.shields.io/npm/v/testit.svg)](http://badge.fury.io/js/testit)
 
 ## Installation
 
