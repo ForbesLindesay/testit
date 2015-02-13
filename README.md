@@ -1,8 +1,11 @@
 # testit
 
-Because the world needs a simpler testing framework
+Because the world needs a simpler testing framework.  Check out the travis build log for an example of test output and check out the test folder for an example test suite.
+
+This module also works seamlessly with [istanbul](https://github.com/gotwarlost/istanbul) for code coverage (see package.json) and [sauce-test](https://github.com/ForbesLindesay/sauce-test) for browser testing.
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/testit/master.svg)](https://travis-ci.org/ForbesLindesay/testit)
+[![Coverage Status](https://img.shields.io/coveralls/ForbesLindesay/testit/master.svg?style=flat)](https://coveralls.io/r/ForbesLindesay/testit?branch=master)
 [![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/testit.svg)](https://gemnasium.com/ForbesLindesay/testit)
 [![NPM version](https://img.shields.io/npm/v/testit.svg)](http://badge.fury.io/js/testit)
 
@@ -14,35 +17,40 @@ Because the world needs a simpler testing framework
 
 ```javascript
 var assert = require('assert')
-var it = require('testit')
+var test = require('testit')
 
-it('passes tests that do not fail', function () {
-  assert(true)
+test('synchronous tests', function () {
+  test('passes tests that do not fail', function () {
+    assert(true)
+  })
+  test('fails tests that fail', function () {
+    assert(false)
+  })
 })
-it('fails tests that fail', function () {
-  assert(false)
+
+test('asynchronous tests with callbacks', function () {
+  test('passes some async tests', function (done) {
+    setTimeout(done, 100)
+  })
+  test('fails some async tests', function (done) {
+    setTimeout(function () {
+      done(new Error('oh dear'))
+    }, 100)
+  })
+  test('times out some tests', function (done) {
+    setTimeout(function () {
+      done()
+    }, 99999999999)
+  })
+  test('supports custom timeouts', function (done) {
+    setTimeout(done, 1000)
+  }, {timeout: '1 second'})
 })
-it('passes some async tests', function (done) {
-  setTimeout(done, 100)
-})
-it('fails some async tests', function (done) {
-  setTimeout(function () {
-    done(new Error('oh dear'))
-  }, 100)
-})
-it('times out some tests', function (done) {
-  setTimeout(function () {
-    done()
-  }, 99999999999)
-})
-it('supports promises just as well as callbacks', function () {
+test('supports promises just as well as callbacks', function () {
   return new Promise(function (resolve) {
     setTimeout(resolve, 100)
   })
 })
-it('supports custom timeouts', function (done) {
-  setTimeout(done, 1000)
-}, '1 second')
 ```
 
 ## License

@@ -4,12 +4,19 @@
   "description": "Because the world needs a simpler testing framework",
   "keywords": [],
   "dependencies": {
-    "ms": "~0.6.1",
-    "bash-color": "0.0.3",
-    "promise": "~3.2.0"
+    "chalk": "^0.5.1",
+    "ms": "^0.7.0",
+    "promise": "^6.1.0",
+    "test-result": "^2.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.5"
   },
   "scripts": {
-    "test": "node test/index"
+    "test": "node test/index.js",
+    "coverage": "istanbul cover test/index.js",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
