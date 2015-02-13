@@ -20,7 +20,7 @@ function run(fn, options) {
 }
 module.exports = it
 module.exports.run = run;
-module.exports.disableColors = function () {
-  defaultSuite.disableColors();
-};
+module.exports.disableColors = defaultSuite.disableColors.bind(defaultSuite);
+module.exports.on = defaultSuite.on.bind(defaultSuite);
+
 module.exports.Suite = Suite;

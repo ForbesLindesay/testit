@@ -6,6 +6,17 @@ var result = require('test-result');
 var test = require('../')
 var Suite = require('../lib/suite')
 
+// we are going to tamper with the `test-result` module
+// so we wire things up here to make sure the result is
+// definitely recorded
+var originalResult = {
+  pass: result.pass,
+  fail: result.fail
+};
+test.on('suite-fail', function () {
+  originalResult.fail('fallback test failer');
+});
+
 function captureLogs() {
   var logs = []
   var log = console.log
@@ -14,7 +25,8 @@ function captureLogs() {
   var fail = result.fail
   console.log = function (str) {
     assert(arguments.length === 1)
-    logs.push(str.split('\n')[0])
+    str = str.split('\n')[0];
+    logs.push(str)
   }
   Suite.now = function () {
     return 0
@@ -424,43 +436,3 @@ test('infinite timeout', function () {
     ])
   })
 });
-
-/*
-it('fails tests that fail', function () {
-  assert(false)
-})
-it('passes some async tests', function (done) {
-  setTimeout(done, 100)
-})
-it('fails some async tests', function (done) {
-  setTimeout(function () {
-    done(new Error('oh dear'))
-  }, 100)
-})
-
-it.run(function () {
-  console.log('You can run things inline between tests\n')
-})
-it.run(function () {
-  console.log('So half way through tests, such WOW!\n')
-})
-it('times out some tests', function (done) {
-  setTimeout(function () {
-    done()
-  }, 999999)
-}, '1 second')
-it('supports promises just as well as callbacks', function () {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, 100)
-  })
-})
-it('supports failing promises just as well as callbacks', function () {
-  return new Promise(function (resolve, reject) {
-    setTimeout(reject.bind(this, new Error('oh dear')), 100)
-  })
-})
-it('supports timing out promises just as well as callbacks', function () {
-  return new Promise(function (resolve, reject) {
-  })
-}, '1 second')
-*/
