@@ -2,12 +2,14 @@
 
 Because the world needs a simpler testing framework.  Check out the travis build log for an example of test output and check out the test folder for an example test suite.
 
-This module also works seamlessly with [istanbul](https://github.com/gotwarlost/istanbul) for code coverage (see package.json) and [sauce-test](https://github.com/ForbesLindesay/sauce-test) for browser testing.
+This module also works seamlessly with [istanbul](https://github.com/gotwarlost/istanbul) for code coverage (see package.json) and [sauce-test](https://github.com/ForbesLindesay/sauce-test) for browser testing via [browserify](http://browserify.org/).
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/testit/master.svg)](https://travis-ci.org/ForbesLindesay/testit)
 [![Coverage Status](https://img.shields.io/coveralls/ForbesLindesay/testit/master.svg?style=flat)](https://coveralls.io/r/ForbesLindesay/testit?branch=master)
 [![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/testit.svg)](https://gemnasium.com/ForbesLindesay/testit)
 [![NPM version](https://img.shields.io/npm/v/testit.svg)](http://badge.fury.io/js/testit)
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/testit.svg)](https://saucelabs.com/u/testit)
 
 ## Installation
 
