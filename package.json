@@ -1,6 +1,6 @@
 {
   "name": "testit",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Because the world needs a simpler testing framework",
   "keywords": [],
   "dependencies": {
