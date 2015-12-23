@@ -6,8 +6,8 @@ This module also works seamlessly with [istanbul](https://github.com/gotwarlost/
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/testit/master.svg)](https://travis-ci.org/ForbesLindesay/testit)
 [![Coverage Status](https://img.shields.io/coveralls/ForbesLindesay/testit/master.svg?style=flat)](https://coveralls.io/r/ForbesLindesay/testit?branch=master)
-[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/testit.svg)](https://gemnasium.com/ForbesLindesay/testit)
-[![NPM version](https://img.shields.io/npm/v/testit.svg)](http://badge.fury.io/js/testit)
+[![Dependency Status](https://img.shields.io/david/ForbesLindesay/testit.svg)](https://david-dm.org/ForbesLindesay/testit)
+[![NPM version](https://img.shields.io/npm/v/testit.svg)](https://www.npmjs.com/package/testit)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/testit.svg)](https://saucelabs.com/u/testit)
 
