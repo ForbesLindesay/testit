@@ -4,14 +4,14 @@
   "description": "Because the world needs a simpler testing framework",
   "keywords": [],
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.1.1",
     "ms": "^0.7.0",
-    "promise": "^6.1.0",
+    "promise": "^7.1.1",
     "test-result": "^2.0.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
-    "istanbul": "^0.3.5",
+    "istanbul": "^0.4.2",
     "sauce-test": "^1.0.0"
   },
   "scripts": {
