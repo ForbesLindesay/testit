@@ -5,7 +5,7 @@
   "keywords": [],
   "dependencies": {
     "chalk": "^1.1.1",
-    "ms": "^0.7.0",
+    "ms": "^0.7.1",
     "promise": "^7.1.1",
     "test-result": "^2.0.0"
   },
