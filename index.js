@@ -7,7 +7,7 @@ defaultSuite.addExit();
 
 var runTriggered = false;
 function it(name, fn, options) {
-  defaultSuite.addTest(name, fn);
+  defaultSuite.addTest(name, fn, options);
   if (!runTriggered) {
     runTriggered = true;
     setTimeout(function () {
