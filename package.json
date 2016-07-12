@@ -10,7 +10,7 @@
     "test-result": "^2.0.0"
   },
   "devDependencies": {
-    "coveralls": "^2.11.2",
+    "coveralls": "^2.11.11",
     "istanbul": "^0.4.2",
     "sauce-test": "^1.0.0"
   },
