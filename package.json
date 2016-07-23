@@ -5,9 +5,11 @@
   "keywords": [],
   "dependencies": {
     "chalk": "^1.1.3",
+    "is-browser": "^2.0.1",
     "ms": "^0.7.1",
     "promise": "^7.1.1",
-    "test-result": "^2.0.0"
+    "test-result": "^2.0.0",
+    "wtfnode": "^0.3.5"
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
@@ -15,7 +17,7 @@
     "sauce-test": "^1.0.0"
   },
   "scripts": {
-    "test": "node test/index.js && node test/browser.js",
+    "test": "node test/index.js && echo starting browser tests && node test/browser.js",
     "coverage": "istanbul cover test/index.js",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },

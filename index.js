@@ -1,5 +1,9 @@
 'use strict'
 
+var IS_BROWSER = require('is-browser');
+if (!IS_BROWSER) {
+  var wtfnode = require('wtfnode');
+}
 var Suite = require('./lib/suite');
 var defaultSuite = new Suite();
 defaultSuite.addLogging();
@@ -11,7 +15,13 @@ function it(name, fn, options) {
   if (!runTriggered) {
     runTriggered = true;
     setTimeout(function () {
-      defaultSuite.run().done();
+      defaultSuite.run().done(() => {
+        if (!IS_BROWSER) {
+          setTimeout(() => {
+            wtfnode.dump();
+          }, 5000).unref()
+        }
+      });
     }, 0);
   }
 }
