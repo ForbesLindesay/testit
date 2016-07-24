@@ -17,7 +17,7 @@ function it(name, fn, options) {
     setTimeout(function () {
       defaultSuite.run().done(function () {
         if (!IS_BROWSER) {
-          setTimeout(() => {
+          setTimeout(function () {
             wtfnode.dump();
           }, 5000).unref()
         }
