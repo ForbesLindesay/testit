@@ -6,7 +6,7 @@ var LOCAL = !process.env.CI && process.argv[2] !== 'sauce';
 var USER = 'testit';
 var ACCESS_KEY = '9b702258-86c3-4691-97d3-5edff9fb5504';
 
-if (process.env.CI && process.version.indexOf('v0.12.') !== 0) {
+if (process.env.CI && process.version.indexOf('v6') !== 0) {
   // only run the browser tests once
   process.exit(0);
 }

@@ -15,7 +15,7 @@ function it(name, fn, options) {
   if (!runTriggered) {
     runTriggered = true;
     setTimeout(function () {
-      defaultSuite.run().done(() => {
+      defaultSuite.run().done(function () {
         if (!IS_BROWSER) {
           setTimeout(() => {
             wtfnode.dump();
