@@ -2,7 +2,8 @@
 
 var IS_BROWSER = require('is-browser');
 if (!IS_BROWSER) {
-  var wtfnode = require('wtfnode');
+  var r = require;
+  var wtfnode = (r)('wtfnode');
 }
 var Suite = require('./lib/suite');
 var defaultSuite = new Suite();
