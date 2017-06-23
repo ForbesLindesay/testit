@@ -1,5 +1,7 @@
 # testit
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/testit.svg)](https://greenkeeper.io/)
+
 Because the world needs a simpler testing framework.  Check out the travis build log for an example of test output and check out the test folder for an example test suite.
 
 This module also works seamlessly with [istanbul](https://github.com/gotwarlost/istanbul) for code coverage (see package.json) and [sauce-test](https://github.com/ForbesLindesay/sauce-test) for browser testing via [browserify](http://browserify.org/).
