@@ -4,7 +4,7 @@
   "description": "Because the world needs a simpler testing framework",
   "keywords": [],
   "dependencies": {
-    "chalk": "^1.1.3",
+    "chalk": "^2.0.0",
     "is-browser": "^2.0.1",
     "ms": "^1.0.0",
     "promise": "^8.0.1",
