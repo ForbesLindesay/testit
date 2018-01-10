@@ -6,6 +6,15 @@ var result = require('test-result');
 var test = require('../')
 var Suite = require('../lib/suite')
 
+// Retrieve the name of an Assertion Error, as it differs on each platform.
+var assertErrorString = 'AssertionError'
+try {
+  assert(false);
+}
+catch (err) {
+  assertErrorString = err.name
+}
+
 // we are going to tamper with the `test-result` module
 // so we wire things up here to make sure the result is
 // definitely recorded
@@ -23,6 +32,7 @@ function captureLogs() {
   var now = Suite.now
   var pass = result.pass
   var fail = result.fail
+
   console.log = function (str) {
     assert(arguments.length === 1)
     str = str.split('\n')[0];
@@ -101,7 +111,7 @@ test('synchronous', function () {
       assert.deepEqual(logs(), [
         ' ✗ fails tests that fail (0ms)',
         '',
-        '   AssertionError: false == true',
+        '   ' + assertErrorString + ': false == true',
         '',
         'Total duration 0ms',
         '<fail>'
@@ -126,7 +136,7 @@ test('synchronous', function () {
         ' • fails tests that fail',
         '   ✗ even when they are nested (0ms)',
         '',
-        '     AssertionError: false == true',
+        '     ' + assertErrorString + ': false == true',
         '',
         'Total duration 0ms',
         '<fail>'
@@ -197,7 +207,7 @@ test('asynchronous', function () {
         assert.deepEqual(logs(), [
           ' ✗ fails tests that fail (0ms)',
           '',
-          '   AssertionError: false == true',
+          '   ' + assertErrorString + ': false == true',
           '',
           'Total duration 0ms',
           '<fail>'
@@ -224,7 +234,7 @@ test('asynchronous', function () {
         ' • fails tests that fail',
         '   ✗ even when they are nested (0ms)',
         '',
-        '     AssertionError: false == true',
+        '     ' + assertErrorString + ': false == true',
         '',
         'Total duration 0ms',
         '<fail>'
@@ -315,7 +325,7 @@ test('asynchronous', function () {
         assert.deepEqual(logs(), [
           ' ✗ fails tests that fail (0ms)',
           '',
-          '   AssertionError: false == true',
+          '   ' + assertErrorString + ': false == true',
           '',
           'Total duration 0ms',
           '<fail>'
@@ -342,7 +352,7 @@ test('asynchronous', function () {
           ' • fails tests that fail',
           '   ✗ even when they are nested (0ms)',
           '',
-          '     AssertionError: false == true',
+          '     ' + assertErrorString + ': false == true',
           '',
           'Total duration 0ms',
           '<fail>'
@@ -409,7 +419,7 @@ test('run', function () {
       assert.deepEqual(logs(), [
         ' ✗ run (0ms)',
         '',
-        '   AssertionError: false == true',
+        '   ' + assertErrorString + ': false == true',
         '',
         'Total duration 0ms',
         '<fail>'
