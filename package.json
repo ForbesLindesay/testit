@@ -9,7 +9,7 @@
     "ms": "^2.1.1",
     "promise": "^8.0.1",
     "test-result": "^2.0.0",
-    "wtfnode": "^0.6.0"
+    "wtfnode": "^0.7.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
