@@ -9,12 +9,13 @@
     "ms": "^2.1.1",
     "promise": "^8.0.1",
     "test-result": "^2.0.0",
-    "wtfnode": "^0.7.0"
+    "wtfnode": "^0.8.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
-    "sauce-test": "^1.1.0"
+    "sauce-test": "^1.1.0",
+    "semver": "^5.6.0"
   },
   "scripts": {
     "test": "node test/index.js && echo starting browser tests && node test/browser.js",
