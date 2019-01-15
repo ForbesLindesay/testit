@@ -5,6 +5,10 @@ var Promise = require('promise')
 var result = require('test-result');
 var test = require('../')
 var Suite = require('../lib/suite')
+var semver = require('semver')
+
+// Prepare a boolean failure string.
+var booleanErrorString = semver.gt(process.version, '10.0.0') ? 'The expression evaluated to a falsy value:' : 'false == true'
 
 // Retrieve the name of an Assertion Error, as it differs on each platform.
 var assertErrorString = 'AssertionError'
@@ -111,7 +115,7 @@ test('synchronous', function () {
       assert.deepEqual(logs(), [
         ' ✗ fails tests that fail (0ms)',
         '',
-        '   ' + assertErrorString + ': The expression evaluated to a falsy value:',
+        '   ' + assertErrorString + ': ' + booleanErrorString,
         '',
         'Total duration 0ms',
         '<fail>'
@@ -136,7 +140,7 @@ test('synchronous', function () {
         ' • fails tests that fail',
         '   ✗ even when they are nested (0ms)',
         '',
-        '     ' + assertErrorString + ': The expression evaluated to a falsy value:',
+        '     ' + assertErrorString + ': ' + booleanErrorString,
         '',
         'Total duration 0ms',
         '<fail>'
@@ -207,7 +211,7 @@ test('asynchronous', function () {
         assert.deepEqual(logs(), [
           ' ✗ fails tests that fail (0ms)',
           '',
-          '   ' + assertErrorString + ': The expression evaluated to a falsy value:',
+          '   ' + assertErrorString + ': ' + booleanErrorString,
           '',
           'Total duration 0ms',
           '<fail>'
@@ -234,7 +238,7 @@ test('asynchronous', function () {
         ' • fails tests that fail',
         '   ✗ even when they are nested (0ms)',
         '',
-        '     ' + assertErrorString + ': The expression evaluated to a falsy value:',
+        '     ' + assertErrorString + ': ' + booleanErrorString,
         '',
         'Total duration 0ms',
         '<fail>'
@@ -325,7 +329,7 @@ test('asynchronous', function () {
         assert.deepEqual(logs(), [
           ' ✗ fails tests that fail (0ms)',
           '',
-          '   ' + assertErrorString + ': The expression evaluated to a falsy value:',
+          '   ' + assertErrorString + ': ' + booleanErrorString,
           '',
           'Total duration 0ms',
           '<fail>'
@@ -352,7 +356,7 @@ test('asynchronous', function () {
           ' • fails tests that fail',
           '   ✗ even when they are nested (0ms)',
           '',
-          '     ' + assertErrorString + ': The expression evaluated to a falsy value:',
+          '     ' + assertErrorString + ': ' + booleanErrorString,
           '',
           'Total duration 0ms',
           '<fail>'
@@ -419,7 +423,7 @@ test('run', function () {
       assert.deepEqual(logs(), [
         ' ✗ run (0ms)',
         '',
-        '   ' + assertErrorString + ': The expression evaluated to a falsy value:',
+        '   ' + assertErrorString + ': ' + booleanErrorString,
         '',
         'Total duration 0ms',
         '<fail>'
