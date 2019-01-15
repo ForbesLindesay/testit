@@ -111,7 +111,7 @@ test('synchronous', function () {
       assert.deepEqual(logs(), [
         ' ✗ fails tests that fail (0ms)',
         '',
-        '   ' + assertErrorString + ': false == true',
+        '   ' + assertErrorString + ': The expression evaluated to a falsy value:',
         '',
         'Total duration 0ms',
         '<fail>'
@@ -136,7 +136,7 @@ test('synchronous', function () {
         ' • fails tests that fail',
         '   ✗ even when they are nested (0ms)',
         '',
-        '     ' + assertErrorString + ': false == true',
+        '     ' + assertErrorString + ': The expression evaluated to a falsy value:',
         '',
         'Total duration 0ms',
         '<fail>'
@@ -207,7 +207,7 @@ test('asynchronous', function () {
         assert.deepEqual(logs(), [
           ' ✗ fails tests that fail (0ms)',
           '',
-          '   ' + assertErrorString + ': false == true',
+          '   ' + assertErrorString + ': The expression evaluated to a falsy value:',
           '',
           'Total duration 0ms',
           '<fail>'
@@ -234,7 +234,7 @@ test('asynchronous', function () {
         ' • fails tests that fail',
         '   ✗ even when they are nested (0ms)',
         '',
-        '     ' + assertErrorString + ': false == true',
+        '     ' + assertErrorString + ': The expression evaluated to a falsy value:',
         '',
         'Total duration 0ms',
         '<fail>'
@@ -325,7 +325,7 @@ test('asynchronous', function () {
         assert.deepEqual(logs(), [
           ' ✗ fails tests that fail (0ms)',
           '',
-          '   ' + assertErrorString + ': false == true',
+          '   ' + assertErrorString + ': The expression evaluated to a falsy value:',
           '',
           'Total duration 0ms',
           '<fail>'
@@ -352,7 +352,7 @@ test('asynchronous', function () {
           ' • fails tests that fail',
           '   ✗ even when they are nested (0ms)',
           '',
-          '     ' + assertErrorString + ': false == true',
+          '     ' + assertErrorString + ': The expression evaluated to a falsy value:',
           '',
           'Total duration 0ms',
           '<fail>'
@@ -419,7 +419,7 @@ test('run', function () {
       assert.deepEqual(logs(), [
         ' ✗ run (0ms)',
         '',
-        '   ' + assertErrorString + ': false == true',
+        '   ' + assertErrorString + ': The expression evaluated to a falsy value:',
         '',
         'Total duration 0ms',
         '<fail>'
