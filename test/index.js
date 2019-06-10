@@ -16,7 +16,7 @@ try {
   assert(false);
 }
 catch (err) {
-  assertErrorString = err.name
+  assertErrorString = err.toString().replace(`: ${err.message}`, '')
 }
 
 // we are going to tamper with the `test-result` module
