@@ -15,7 +15,7 @@
     "coveralls": "^3.0.0",
     "istanbul": "^0.4.5",
     "sauce-test": "^1.1.0",
-    "semver": "^6.0.0"
+    "semver": "^7.0.0"
   },
   "scripts": {
     "test": "node test/index.js && echo starting browser tests && node test/browser.js",
